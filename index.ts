@@ -183,18 +183,13 @@ console.log(
 //Napravite funkciju koja prima niz stringova i
 //vraća niz stringova koji sadrži samo one elemente koji počinju slovom "a".
 
-function getElementsStartingWithA(strings: string[]): string[] {
-  let elementsStartingWithA = [];
-  for (let i = 0; i < strings.length; i++) {
-    if (strings[i].startsWith("a")) {
-      elementsStartingWithA.push(strings[i]);
-    }
-  }
-  return elementsStartingWithA;
+function filterStrings(strings: string[]): string[] {
+  return strings.filter((str) => str[0].toLowerCase() === "a");
 }
-let strings = ["apple", "banana", "cherry", "almond"];
-let elementsStartingWithA = getElementsStartingWithA(strings);
-console.log(elementsStartingWithA);
+
+let strings = ["apple", "banana", "cherry", "Almond", "Blueberry"];
+let filteredStrings = filterStrings(strings);
+console.log(filteredStrings);
 
 //Napravite klasu "Book" koja sadrži polja za naslov,
 //autora i godinu izdavanja. Napravite klasu "Library" koja sadrži niz "Book"
